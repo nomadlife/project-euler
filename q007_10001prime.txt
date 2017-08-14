@@ -1,0 +1,88 @@
+Q-007
+
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+What is the 10 001st prime number?
+
+
+10001 번째 소수를 찾으라는군요.
+
+
+
+
+
+
+
+plan :
+
+prime number 를 확인하는건 앞서 3번문제에서 한적이 있습니다. 그래서 요걸 그대로 사용하기로 하겠습니다.
+
+def prime_check(number):
+	i=1;count=0
+	while i<=number:
+		if number % i == 0:
+			count=count+1
+		i+=1
+	if count==2:
+		return True
+	else :
+		return False
+
+그다음, 무한루프문을 만들고,
+루프안에서 소수인지 확인하면서 카운트가 10001번째가 될때 루프를 종료하도록 하면 되겠죠.
+
+
+coding:
+
+i=1;prime_count=0
+while True:   #무한루프
+	prime = prime_check(i)
+	if prime:
+		prime_count+=1
+		print("prime nuber ",i,"count :",prime_count)
+	if prime_count==10001:
+		break
+	i+=1
+	
+print(prime_factor)
+
+
+그랬더니 문제가 하나 생겼습니다. 시간이 엄청 오래걸립니다. 그냥 오래걸리는게 아니라, 시간이 갈수록 점점더 느려집니다..
+처음 몇백개는 괜찮은데, 숫자가 커질수록 소수를 확인하는 시간이 점점 길어집니다.
+그 이유를 생각해봤더니, 소수를 확인하는 과정에서, 숫자크기만큼의 루프를 매번 모두 돌도록 했기 때문에, 숫자가 커질수록 점점 더 느려질수 밖에 없었네요.
+
+일단 첫번째 해결책으로는 prime_check()함수에서, 나누어 떨어지는 즉시, False 를 반환하고 루프를 종료하도록 했습니다. 그러면 짝수들은 그냥 루프 시작하자 마자 i=2일때 바로 종료되겠죠. 홀수들도 소수가 아니면 대부분 초반에 루프가 종료될것 같습니다.
+
+def prime_check(number):
+	i=2
+	if number==1:  #1일때는 루프를 안돌고, 바로 True 를 반환해버려서 따로 조건문을 달아줬습니다.
+		return False
+	while i<number:
+		if number % i == 0: 
+			return False  # 나누어떨어지는 수 발견시, 바로 False 를 반환합니다.
+		i+=1
+	return True
+
+이렇게 꽤 빨라졌네요. 그래도 한 5000 번째부터는 슬슬 느려집니다. 걸러지는 수는 바로 걸러지는데, 소수인경우는 끝까지 루프를 다 돌아야 알수 있거든요.
+그래서 또 한가지 방법이, 루프를 절반(제곱근까지)만 돌리는 겁니다. 약수는 항상 제곱근을 중심으로 짝으로 존재하기 때문에, 제곱근을 포함하여, 앞쪽만 확인을 하면, 뒷부분은 확인을 안해도 되겠죠.
+
+def prime_check(number):
+	if number==1:
+		return False
+	loop=round(number**0.5)  #제곱근을 구하고, round를 취해서 정수로 만들어 줍니다.
+	i=2
+	while i<=loop:           #제곱근을 취한상태에서 2보다 작은수, 즉 2,3은 루프를 안돌고 나가서 바로 True를 반환합니다.
+		if number % i == 0:  #루프는 제곱근만큼만 돌지만, 비교는 실제숫자와 합니다.
+			return False 
+		i+=1
+	return True
+	
+그랬더니, 처음과는 비교도 안되게 빨라졌네요. 제 컴퓨터가 느려서, 이런 코드몇줄에도 민감한 것이 이럴땐 좋은건가 싶기도 하네요.
+
+
+
+
+
+
+
+

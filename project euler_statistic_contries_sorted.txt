@@ -1,0 +1,217 @@
+    USA  USA 	40835
+    India  India 	12402
+    Germany  Germany 	8343
+    England  England 	7783
+    Canada  Canada 	6639
+    China  China 	5565
+    France  France 	4991
+    Russia  Russia 	4543
+    Sweden  Sweden 	4103
+    Netherlands  Netherlands 	3824
+    Brazil  Brazil 	3565
+    Japan  Japan 	3546
+    Poland  Poland 	3528
+    Australia  Australia 	3460
+    Italy  Italy 	2360
+    Turkey  Turkey 	2151
+    Ukraine  Ukraine 	2141
+    Mexico  Mexico 	1971
+    Israel  Israel 	1968
+    Norway  Norway 	1772
+    South Korea  South Korea 	1721
+    Spain  Spain 	1720
+    Denmark  Denmark 	1702
+    Sri Lanka  Sri Lanka 	1658
+    Belgium  Belgium 	1632
+    Romania  Romania 	1611
+    Hungary  Hungary 	1562
+    Iran  Iran 	1560
+    Finland  Finland 	1450
+    Portugal  Portugal 	1372
+    South Africa  South Africa 	1370
+    Philippines  Philippines 	1353
+    Indonesia  Indonesia 	1345
+    Switzerland  Switzerland 	1250
+    Czech Republic  Czech Republic 	1217
+    Bangladesh  Bangladesh 	1186
+    Ireland  Ireland 	1170
+    Austria  Austria 	1115
+    Palau  Palau 	1040
+    Greece  Greece 	1016
+    New Zealand  New Zealand 	986
+    Argentina  Argentina 	983
+    Vietnam  Vietnam 	915
+    Scotland  Scotland 	859
+    Egypt  Egypt 	850
+    Bulgaria  Bulgaria 	837
+    Lithuania  Lithuania 	694
+    Slovenia  Slovenia 	686
+    Slovakia  Slovakia 	663
+    Singapore  Singapore 	658
+    Croatia  Croatia 	605
+    Belarus  Belarus 	592
+    Colombia  Colombia 	571
+    Pakistan  Pakistan 	542
+    Serbia  Serbia 	517
+    Taiwan  Taiwan 	507
+    Estonia  Estonia 	454
+    Hong Kong  Hong Kong 	450
+    Thailand  Thailand 	423
+    Malaysia  Malaysia 	422
+    Chile  Chile 	403
+    Iceland  Iceland 	383
+    Latvia  Latvia 	362
+    Wales  Wales 	340
+    Nepal  Nepal 	316
+    Dominican Republic  Dominican Republic 	282
+    Morocco  Morocco 	260
+    Venezuela  Venezuela 	245
+    Peru  Peru 	242
+    Nigeria  Nigeria 	223
+    Lebanon  Lebanon 	195
+    Northern Ireland  Northern Ireland 	194
+    Moldova  Moldova 	191
+    Kenya  Kenya 	185
+    Algeria  Algeria 	184
+    Kazakhstan  Kazakhstan 	178
+    Tunisia  Tunisia 	173
+    Saudi Arabia  Saudi Arabia 	140
+    Bosnia  Bosnia 	136
+    Jordan  Jordan 	134
+    Albania  Albania 	125
+    Azerbaijan  Azerbaijan 	119
+    FYR of Macedonia  FYR of Macedonia 	119
+    Cuba  Cuba 	118
+    Bolivia  Bolivia 	117
+    Armenia  Armenia 	116
+    Ecuador  Ecuador 	108
+    Puerto Rico  Puerto Rico 	108
+    Cyprus  Cyprus 	105
+    Syria  Syria 	105
+    Uruguay  Uruguay 	105
+    Costa Rica  Costa Rica 	99
+    Uzbekistan  Uzbekistan 	98
+    Guatemala  Guatemala 	97
+    Luxembourg  Luxembourg 	96
+    United Arab Emirates  United Arab Emirates 	82
+    Ghana  Ghana 	81
+    Afghanistan  Afghanistan 	70
+    Palestine  Palestine 	69
+    Zimbabwe  Zimbabwe 	69
+    Ethiopia  Ethiopia 	67
+    Georgia  Georgia 	65
+    Malta  Malta 	61
+    Myanmar  Myanmar 	61
+    El Salvador  El Salvador 	56
+    Trinidad Tobago  Trinidad Tobago 	56
+    Uganda  Uganda 	53
+    Jamaica  Jamaica 	48
+    Mongolia  Mongolia 	48
+    Panama  Panama 	47
+    Honduras  Honduras 	46
+    Turkmenistan  Turkmenistan 	44
+    DPR of Korea  DPR of Korea 	43
+    Kyrgyzstan  Kyrgyzstan 	43
+    Paraguay  Paraguay 	42
+    Tanzania  Tanzania 	39
+    Andorra  Andorra 	35
+    Cambodia  Cambodia 	35
+    Cameroon  Cameroon 	32
+    Iraq  Iraq 	31
+    Mauritius  Mauritius 	28
+    Djibouti  Djibouti 	27
+    Isle of Man  Isle of Man 	27
+    Christmas Island  Christmas Island 	26
+    Kuwait  Kuwait 	26
+    Bahrain  Bahrain 	24
+    Maldives  Maldives 	23
+    Yemen  Yemen 	23
+    Sudan  Sudan 	22
+    Montenegro  Montenegro 	21
+    Tajikistan  Tajikistan 	21
+    Togo  Togo 	19
+    Angola  Angola 	18
+    Fiji  Fiji 	18
+    Haiti  Haiti 	18
+    Qatar  Qatar 	18
+    Yugoslavia  Yugoslavia 	18
+    Jersey  Jersey 	17
+    DR of Congo  DR of Congo 	15
+    Nicaragua  Nicaragua 	15
+    Oman  Oman 	15
+    Seychelles  Seychelles 	15
+    Bahamas  Bahamas 	14
+    Belize  Belize 	14
+    Bermuda  Bermuda 	14
+    Cape Verde  Cape Verde 	14
+    Senegal  Senegal 	14
+    Barbados  Barbados 	13
+    Central African Republic  Central African Republic 	13
+    Somalia  Somalia 	13
+    St Vincent Grenadines  St Vincent Grenadines 	13
+    Swaziland  Swaziland 	13
+    Brunei  Brunei 	12
+    Burkina Faso  Burkina Faso 	12
+    Laos  Laos 	12
+    Libya  Libya 	12
+    Liechtenstein  Liechtenstein 	12
+    Madagascar  Madagascar 	12
+    Mozambique  Mozambique 	12
+    Namibia  Namibia 	12
+    Vanuatu  Vanuatu 	12
+    Botswana  Botswana 	11
+    Macao  Macao 	11
+    Virgin Islands  Virgin Islands 	11
+    Zambia  Zambia 	11
+    Benin  Benin 	10
+    Faroe Islands  Faroe Islands 	10
+    Tuvalu  Tuvalu 	10
+    Bhutan  Bhutan 	9
+    Congo  Congo 	9
+    Eritrea  Eritrea 	9
+    Gabon  Gabon 	9
+    Guernsey  Guernsey 	9
+    Ivory Coast  Ivory Coast 	9
+    Nauru  Nauru 	9
+    Rwanda  Rwanda 	9
+    Saint Lucia  Saint Lucia 	9
+    Tonga  Tonga 	9
+    Gibraltar  Gibraltar 	8
+    Netherlands Antilles  Netherlands Antilles 	8
+    Cayman Islands  Cayman Islands 	7
+    Kiribati  Kiribati 	7
+    Kosovo  Kosovo 	7
+    Lesotho  Lesotho 	7
+    Mali  Mali 	7
+    Monaco  Monaco 	7
+    Niger  Niger 	7
+    San Marino  San Marino 	7
+    Sierra Leone  Sierra Leone 	7
+    Equatorial Guinea  Equatorial Guinea 	6
+    Guyana  Guyana 	6
+    Marshall Islands  Marshall Islands 	6
+    Mauritania  Mauritania 	6
+    Antigua  Antigua 	5
+    Aruba  Aruba 	5
+    Burundi  Burundi 	5
+    East Timor  East Timor 	5
+    Micronesia  Micronesia 	5
+    Comoros  Comoros 	4
+    Dominica  Dominica 	4
+    Gambia  Gambia 	4
+    Grenada  Grenada 	4
+    Guinea  Guinea 	4
+    Guinea Bissau  Guinea Bissau 	4
+    Liberia  Liberia 	4
+    New Guinea  New Guinea 	4
+    Samoa  Samoa 	4
+    Sao Tome  Sao Tome 	4
+    Caribbean Netherlands  Caribbean Netherlands 	3
+    Malawi  Malawi 	3
+    Solomon Islands  Solomon Islands 	3
+    Suriname  Suriname 	3
+    Chad  Chad 	2
+    Curacao  Curacao 	2
+    Greenland  Greenland 	2
+    Sint Maarten  Sint Maarten 	2
+    South Sudan  South Sudan 	1
