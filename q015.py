@@ -1,5 +1,5 @@
 #project-euler q015
-#Longest Collatz sequence
+#Lattice paths
 
 # #the 141990th person to have solved this problem.
 #running time is 1414 sec @3205U, too much slow.
