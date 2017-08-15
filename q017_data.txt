@@ -25,5 +25,3 @@ sixty
 seventy
 eighty
 ninety
-hundred
-thousand
