@@ -46,6 +46,6 @@ def biggest_sum(i=0,j=0):
 		else :
 			return int(numbers[i][j])+int(num2)
 
-#print(biggest_sum())
+print(biggest_sum())
 #print(biggest_path())
 #print(biggest_sum_with_path())
