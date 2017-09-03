@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>q019</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  }
+  div.output_wrapper {
+    display: block;
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
+  }
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
+}
+
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>일요일의 갯수(매달 1일이 일요일이고, 20세기동안(1 Jan 1901 to 31 Dec 2000))</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Q019</p>
+<p>You are given the following information, but you may prefer to do some research for yourself.</p>
+
+<pre><code>1 Jan 1900 was a Monday.
+Thirty days has September,
+April, June and November.
+All the rest have thirty-one,
+Saving February alone,
+Which has twenty-eight, rain or shine.
+And on leap years, twenty-nine.
+A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+
+</code></pre>
+<p>How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># 월 출력 (list)</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="s">&#39;Feb&#39;</span><span class="p">,</span><span class="s">&#39;Mar&#39;</span><span class="p">,</span><span class="s">&#39;Apr&#39;</span><span class="p">,</span><span class="s">&#39;May&#39;</span><span class="p">,</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="s">&#39;Aug&#39;</span><span class="p">,</span><span class="s">&#39;Sep&#39;</span><span class="p">,</span><span class="s">&#39;Oct&#39;</span><span class="p">,</span><span class="s">&#39;Nov&#39;</span><span class="p">,</span><span class="s">&#39;Dec&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+  <div class="output_area"><div class="prompt"></div>
+  <div class="output_subarea output_stream output_stdout output_text">
+
+<!--
+<div>
+  <input type="checkbox" class="read-more-state" id="post-1" />
+  <label for="post-1" class="read-more-trigger"></label>
+  <p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
+</div>
+-->
+
+<div>
+  <input type="checkbox" class="read-more-state" id="result-1" />
+    <label for="result-1" class="read-more-trigger"></label>
+<!--
+  <ul class="read-more-wrap">
+    <li>lorem</li>
+    <li>lorem 2</li>
+    <li class="read-more-target">lorem 3</li>
+    <li class="read-more-target">lorem 4</li>
+  </ul>
+-->
+
+  <pre class="read-more-wrap">
+  <p class="read-more-target">
+  Jan
+  Feb
+  Mar
+  Apr
+  May
+  Jun
+  Jul
+  Aug
+  Sep
+  Oct
+  Nov
+  Dec
+  </p>
+  </pre>
+</div>
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># 월 출력2 (named list)</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">),(</span><span class="s">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;May&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Dec&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">month</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="output_wrapper"  >
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text" id="result1">
+
+<!--
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#result1">result</button>
+<div id="result1" class="collapse">
+ -->
+ <div>
+ <input type=checkbox class="read-more-state"/>
+<span class ="read-more-target">
+<pre>(&apos;Jan&apos;, 30) Jan , 30
+(&apos;Feb&apos;, 28) Feb , 28
+(&apos;Mar&apos;, 31) Mar , 31
+(&apos;Apr&apos;, 30) Apr , 30
+(&apos;May&apos;, 31) May , 31
+(&apos;Jun&apos;, 30) Jun , 30
+(&apos;Jul&apos;, 31) Jul , 31
+(&apos;Aug&apos;, 31) Aug , 31
+(&apos;Sep&apos;, 30) Sep , 30
+(&apos;Oct&apos;, 31) Oct , 31
+(&apos;Nov&apos;, 30) Nov , 30
+(&apos;Dec&apos;, 31) Dec , 31
+</pre>
+</span>
+<label type="checkbox" class="read-more-trigger"/>
+</div>
+<!--
+</div>
+-->
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c">#년도 출력</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2001</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1900
+1901
+1902
+1903
+1904
+1905
+...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c">#년,월 동시 출력</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">),(</span><span class="s">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;May&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Dec&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2001</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1900 Jan 31
+1900 Feb 28
+1900 Mar 31
+1900 Apr 30
+1900 May 31
+1900 Jun 30
+1900 Jul 31
+1900 Aug 31
+1900 Sep 30
+....
+2000 Aug 31
+2000 Sep 30
+2000 Oct 31
+2000 Nov 30
+2000 Dec 31
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># 윤달 계산</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">),(</span><span class="s">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;May&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Dec&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2001</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s">&#39;Feb&#39;</span> <span class="ow">and</span> <span class="n">year</span><span class="o">%</span><span class="k">4</span>==0 and year%100!=0:
+            <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;leap year&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1900 Jan 31
+1900 Feb 28
+1900 Mar 31
+1900 Apr 30
+1900 May 31
+1900 Jun 30
+1900 Jul 31
+1900 Aug 31
+1900 Sep 30
+1900 Oct 31
+1900 Nov 30
+1900 Dec 31
+1901 Jan 31
+1901 Feb 28
+1901 Mar 31
+....
+1995 Oct 31
+1995 Nov 30
+1995 Dec 31
+1996 Jan 31
+1996 Feb 29 leap year
+1996 Mar 31
+1996 Apr 30
+1996 May 31
+1996 Jun 30
+1996 Jul 31
+1996 Aug 31
+....
+1999 Jul 31
+1999 Aug 31
+1999 Sep 30
+1999 Oct 31
+1999 Nov 30
+1999 Dec 31
+2000 Jan 31
+2000 Feb 28
+2000 Mar 31
+2000 Apr 30
+2000 May 31
+2000 Jun 30
+2000 Jul 31
+2000 Aug 31
+2000 Sep 30
+2000 Oct 31
+2000 Nov 30
+2000 Dec 31
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># 1일이 일요일인 달수 계산 #1</span>
+<span class="n">sundayCount</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">totalDay</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">),(</span><span class="s">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;May&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Dec&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2001</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s">&#39;Feb&#39;</span> <span class="ow">and</span> <span class="n">year</span><span class="o">%</span><span class="k">4</span>==0 and year%100!=0:
+            <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;leap year&quot;</span><span class="p">)</span>
+            <span class="n">totalDay</span><span class="o">=</span><span class="n">totalDay</span><span class="o">+</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">totalDay</span><span class="o">=</span><span class="n">totalDay</span><span class="o">+</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">totalDay</span><span class="p">,(</span><span class="n">totalDay</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">%</span><span class="k">7</span>)
+<span class="c"># 날짜합이 7로 나누어 떨어지는확인, 1900년 1월1일이 월요일이기 때문에, 처음에 -6</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1900 Jan 31
+31 4
+1900 Feb 28
+59 4
+1900 Mar 31
+90 0
+1900 Apr 30
+120 2
+1900 May 31
+151 5
+1900 Jun 30
+181 0
+1900 Jul 31
+212 3
+.....
+...
+...
+2000 Apr 30
+36644 0
+2000 May 31
+36675 3
+2000 Jun 30
+36705 5
+2000 Jul 31
+36736 1
+2000 Aug 31
+36767 4
+2000 Sep 30
+36797 6
+2000 Oct 31
+36828 2
+2000 Nov 30
+36858 4
+2000 Dec 31
+36889 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># 1일이 일요일인 달수 계산 #2</span>
+<span class="n">sundayCount</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">totalDay</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Feb&#39;</span><span class="p">,</span><span class="mi">28</span><span class="p">),(</span><span class="s">&#39;Mar&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Apr&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;May&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Aug&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Sep&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Oct&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),(</span><span class="s">&#39;Nov&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">),(</span><span class="s">&#39;Dec&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2001</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s">&#39;Feb&#39;</span> <span class="ow">and</span> <span class="n">year</span><span class="o">%</span><span class="k">4</span>==0 and year%100!=0:
+            <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;leap year&quot;</span><span class="p">)</span>
+            <span class="n">totalDay</span><span class="o">=</span><span class="n">totalDay</span><span class="o">+</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">totalDay</span><span class="o">=</span><span class="n">totalDay</span><span class="o">+</span><span class="n">month</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">totalDay</span><span class="p">,(</span><span class="n">totalDay</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">%</span><span class="k">7</span>)
+        <span class="k">if</span> <span class="p">(</span><span class="n">totalDay</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">%</span><span class="k">7</span> == 0 and year&gt;1900:
+            <span class="n">sundayCount</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sundayCount</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sundayCount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c">#마지막 2000년 12월이 7로 나누어 떨어지는데,(2001년 1월1일이 일요일이라는 의미),이는 계산범위를 벗어남.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+</html>
