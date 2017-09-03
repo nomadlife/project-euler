@@ -1,12 +1,5 @@
-i=1;sum=0
-while i<1000 :
-	print("loop ",i)
-	if i%3==0:
-		sum=sum+i
-		print(i,", sum =",sum)
-	elif i%5==0:
-		sum=sum+i
-		print(i,", sum =",sum)
-	i=i+1
-
-print(sum)
+total=0
+for i in range(1,1000):
+    if i%3==0 or i%5==0:
+        total+=i
+print(total)
