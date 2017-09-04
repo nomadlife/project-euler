@@ -1,16 +1,14 @@
 #project-euler q007
 #10001st prime number
 
-#most fastest solution !!!!
-
 def prime_check(number):
 	if number==1:
 		return False
 	loop=round(number**0.5)
 	i=2
 	while i<=loop:
-		if number % i == 0: 
-			return False 
+		if number % i == 0:
+			return False
 		i+=1
 	return True
 
@@ -23,4 +21,3 @@ while True:
 	if prime_count==10001:
 		break
 	i+=1
-	
