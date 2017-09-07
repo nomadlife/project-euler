@@ -2,26 +2,22 @@
 #Summation of primes
 #
 
-import time
-start_time = time.time()
+# 3,7 번 문제의 소수 확인코드
+def isPrime(param):
+    if param==1:
+        return False
+    loop=round(param**0.5)
+    for j in range(2,loop+1):
+        if param%j == 0:
+            return False
+        else:
+            continue
+    return True
 
-def is_prime(number):
-	loop=round(number**0.5)
-	i=2
-	while i<=loop:
-		if number % i == 0:
-			return False
-		i+=1
-	if number==1:
-		return False
-	return True
-
-i=1;total=0
-while i<2000000:
-	if is_prime(i):
-		total=total+i
-		print("prime nuber ",i,"sum :",total)
-	i+=1
-
-print("start_time", start_time)
-print("--- %s seconds ---" %(time.time() - start_time))
+# 2000000 까지 소수인지 확인해서 합산 
+total =0
+for i in range(1,2000000):
+    if isPrime(i):
+        total += i
+		
+print(total)

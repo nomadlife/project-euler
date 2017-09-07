@@ -1,8 +1,6 @@
 #project-euler q011
 #Largest Product in grid
 
-# 178920th person to have solved this problem.
-
 filename = 'q011_data.txt' 
 with open(filename) as file_object:
 	contents = file_object.read()
