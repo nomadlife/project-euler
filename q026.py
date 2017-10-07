@@ -1,3 +1,6 @@
+#q026
+# longest recurring cycle in its decimal fraction part
+
 from decimal import *
 
 decimalSize=2000
