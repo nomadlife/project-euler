@@ -1,26 +1,30 @@
-#project-euler q012
-#Highly divisible triangular number
+# q012 Highly divisible triangular number
 
-# 166554th person to have solved this problem.
+import time
+start_time = time.time()
 
-def factor_count(number):
-	i=2;count=1
-	loop=number**0.5
-	while i<loop:
-		if number%i==0:
-			count+=1
-		i+=1
-	return count
+def count_factors(num):
+    loop=num**0.5
+    # for square number
+    if loop==int(loop):
+        count=1
+    else:
+        count=0
+    i=1
+    while i<loop:
+        if num%i==0:
+            count+=2
+        i+=1
+    return count
 
-i=1;t_number=0
+i=1;tri_num=0
 while True:
-	print("loop :",i,end='')
-	t_number=t_number+i
-	print(" t_number :",t_number,end='')
-	count=factor_count(t_number)
-	print(" half number of factors :",count)
-	if count > 250:
-		break
-	i+=1
-	
-print(t_number," has over 500 divisors")
+    tri_num = tri_num + i
+    count = count_factors(tri_num)
+    print("loop:",i,"tri_num",tri_num,"count",count)
+    if count > 500:
+        break
+    i+=1
+
+print("answer:",tri_num)
+print("calculation time:",time.time()-start_time)

@@ -1,26 +1,26 @@
-#project-euler q003
-#largest prime factor of the number 600851475143
-#solved
+# Q003 largest prime factor of the number 600851475143
 
-def isPrime(param):
-    if param==1:
+def is_prime(num):
+    if num==1:
         return False
-    loop=round(param**0.5)
-    for j in range(2,loop+1):
-        if param%j == 0:
+    loop=num**0.5
+    i=2
+    while i<=loop:
+        if num%i==0:
             return False
-        else:
-            continue
+        i+=1
     return True
 
 number = 600851475143
-loopSize = round(number**0.5)
-for i in range(1,loopSize+1):
+loop = number**0.5
+i=1
+while i <= loop:
     if number%i==0:
         number2=number/i
         print(i,number2,end=' ')
-        if isPrime(i):
+        if is_prime(i):
             print(i,"is prime factor")
-        elif isPrime(number2):
+        elif is_prime(number2):
             print(number2,"is prime factor")
         print("")
+    i+=1

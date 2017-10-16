@@ -1,3 +1,5 @@
+# Q002 Even Fibonacci numbers
+
 a=1;b=1;total=0
 while b<=4000000 :
     print(b,end=', ')

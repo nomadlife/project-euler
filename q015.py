@@ -1,23 +1,19 @@
-#project-euler q015
+# Q015
 #Lattice paths
 
-# #the 141990th person to have solved this problem.
-#running time is 1414 sec @3205U, too much slow.
-
-import time
-start_time = time.time()
-
-def combination(n1,n2):
-    if n2==0:
+def grid(r,c):
+    if c==0 or r==0:
         return 1
-    elif n2==1:
-        return n1
-    elif n1==n2*2:
-        return combination(n1-1,n2-1)*2
+    elif r==1:
+        return c+1
+    elif c==1:
+        return r+1
     else:
-        return combination(n1-1,n2)+combination(n1-1,n2-1)
+        return grid(r,c-1)+grid(r-1,c)
 
-print(combination(40,20))
+i=0;dim=20;total=0
+while i<=dim:
+    total = total + grid(i,dim-i)**2
+    i+=1
 
-print("start_time", start_time)
-print("--- %s seconds ---" %(time.time() - start_time))
+print(total)

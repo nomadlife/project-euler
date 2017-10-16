@@ -1,5 +1,4 @@
-#q001
-#
+# Q001 Multiples of 3 and 5
 
 total=0
 for i in range(1,1000):

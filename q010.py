@@ -1,23 +1,21 @@
 #q010
 #Summation of primes
-#
 
-# 3,7 번 문제의 소수 확인코드
-def isPrime(param):
-    if param==1:
+def is_prime(num):
+    if num==1:
         return False
-    loop=round(param**0.5)
-    for j in range(2,loop+1):
-        if param%j == 0:
+    loop=num**0.5
+    i=2
+    while i<=loop:
+        if num%i==0:
             return False
-        else:
-            continue
+        i+=1
     return True
 
-# 2000000 까지 소수인지 확인해서 합산 
 total =0
-for i in range(1,2000000):
-    if isPrime(i):
+i=1
+while i < 2000000:
+    if is_prime(i):
         total += i
-		
+    i+=1
 print(total)

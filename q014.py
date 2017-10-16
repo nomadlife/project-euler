@@ -1,7 +1,7 @@
-#project-euler q014
-#Longest Collatz sequence
+# q014 Longest Collatz sequence
 
-#the 171451st person to have solved this problem.
+import time
+start_time = time.time()
 
 def collatz(num):
     count=1
@@ -16,12 +16,12 @@ def collatz(num):
 
 i=1;max_chain=0;max_i=0
 while i<1000000:
-    print("loop :",i,end='')
     chain=collatz(i)
-    print(" chain :",chain)
     if chain>max_chain:
         max_chain=chain
         max_i=i
-        print("new max_chain :",max_chain,)
+        print("loop :",i,"chain :",chain,"max_chain :",max_chain)
     i+=1
+
 print("max_chain :", max_chain,"loop ",max_i)
+print("calculation time:",time.time()-start_time)

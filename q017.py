@@ -1,7 +1,5 @@
-#project-euler q017
+# Q017
 #Number letter counts
-
-# the 116033rd person to have solved this problem.
 
 filename = 'q017_data.txt'
 with open(filename) as file_object:

@@ -1,6 +1,5 @@
-#project-euler q005
-#The smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-#LCM
+# Q005 The smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
 
 def getGCD(num1,num2):
     for j in range(1,num2+1):

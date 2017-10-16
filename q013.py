@@ -1,7 +1,4 @@
-#project-euler q013
-#Large sum
-
-#172330th person to have solved this problem.
+# q013 Large sum
 
 filename = 'q013_data.txt'
 with open(filename) as file_object:
