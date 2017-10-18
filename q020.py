@@ -1,4 +1,5 @@
-#100까지 계산
+# Q020 Factorial digit sum
+
 def get_factorial(number):
     product=1
     while True:

@@ -1,3 +1,5 @@
+# Q022 Names scores
+
 filename = 'q022_data.txt'
 with open(filename) as file_object:
     contents = file_object.read()

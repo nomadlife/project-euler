@@ -1,6 +1,5 @@
-#project-euler q018
+# Q018
 #Maximum path sum 1
-# the 112037th person to have solved this problem.
 
 filename = 'q018_data.txt'
 with open(filename) as data:

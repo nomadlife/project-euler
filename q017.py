@@ -22,7 +22,7 @@ def make_string(number,string=''):
 		string = string+lines[number-1].rstrip()
 	return string
 
-i=0;string_i='';length_i=0;total_length=0
+i=1;length_i=0;total_length=0
 while i<1000:
 	print("loop:",i,end='')
 	string_i=make_string(i)
@@ -32,4 +32,6 @@ while i<1000:
 	total_length=total_length+length_i
 	print(" total_length:",total_length)
 	i += 1
+    
 print("total_length :",total_length)
+print("add 1000(one thousand,11 letters)",total_length+11)
