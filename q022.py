@@ -6,6 +6,7 @@ with open(filename) as file_object:
 contents=contents.replace('"','')
 names=contents.split(',')
 names.sort()
+
 grand_total =0
 for idx,val in enumerate(names):
     print(idx+1,val,end=' ')
