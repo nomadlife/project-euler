@@ -1,5 +1,5 @@
-# Q015
-#Lattice paths
+# Q015 Lattice paths
+# How many such routes are there through a 20×20 grid?
 
 def grid(r,c):
     if c==0 or r==0:

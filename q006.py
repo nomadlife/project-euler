@@ -1,5 +1,7 @@
-# Q006
-#Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+# Q006 Sum square difference
+# Find the difference between
+# the sum of the squares of the first one hundred natural numbers
+# and the square of the sum.
 
 total = 0
 totalsq = 0

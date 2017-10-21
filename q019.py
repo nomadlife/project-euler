@@ -1,4 +1,6 @@
 # Q019 Counting Sundays
+# How many Sundays fell on the first of the month
+# during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
 sundayCount = 0
 totalDay = 0
@@ -14,7 +16,7 @@ for year in range(1900,2001):
         print(totalDay,(totalDay-6)%7)
         if (totalDay-6)%7 == 0 and year>1900:
             sundayCount+=1
-            
+
 print(sundayCount)
 print(sundayCount-1)
 #마지막 2000년 12월이 7로 나누어 떨어지는데, 2001년 1월1일이 카운트에 들어가서 1을 빼줌.

@@ -1,4 +1,4 @@
-#project-euler q004
+# Q004 Largest palindrome product
 #largest palindrome made from the product of two 3-digit numbers.
 
 def isPalindrome(param):

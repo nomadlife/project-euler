@@ -1,4 +1,5 @@
-# Q003 largest prime factor of the number 600851475143
+# Q003 largest prime factor
+# What is the largest prime factor of the number 600851475143 ?
 
 def is_prime(num):
     if num==1:

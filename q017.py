@@ -1,5 +1,8 @@
-# Q017
-#Number letter counts
+# Q017 Number letter counts
+# numbers 1 to 5 : one, two, three, four, five,
+# 3 + 3 + 5 + 4 + 4 = 19 letters used in total
+# how many letters would be used in numbers from 1 to 1000?
+
 
 filename = 'q017_data.txt'
 with open(filename) as file_object:
@@ -32,6 +35,6 @@ while i<1000:
 	total_length=total_length+length_i
 	print(" total_length:",total_length)
 	i += 1
-    
+
 print("total_length :",total_length)
 print("add 1000(one thousand,11 letters)",total_length+11)

@@ -1,5 +1,4 @@
-# Q007
-#10001st prime number
+# Q007 10001st prime number
 
 def is_prime(num):
     if num==1:

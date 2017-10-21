@@ -1,3 +1,8 @@
+#Q023 Non-abundant sums
+# perfect number : sum of its proper divisors is exactly equal to the number
+# deficient : if the sum of n's proper divisors is less than n
+# abundant : if this sum exceeds n.
+
 import time
 start_time = time.time()
 

@@ -1,5 +1,4 @@
-#q010
-#Summation of primes
+# Q010 Summation of primes < 2M
 
 def is_prime(num):
     if num==1:

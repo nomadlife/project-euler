@@ -1,4 +1,5 @@
 # Q020 Factorial digit sum
+# Find the sum of the digits in the number 100!
 
 def get_factorial(number):
     product=1

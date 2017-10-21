@@ -1,4 +1,5 @@
 # q014 Longest Collatz sequence
+# Which starting number, under one million, produces the longest chain?
 
 import time
 start_time = time.time()

@@ -1,5 +1,6 @@
-# Q008
-#Largest Product in Series
+# Q008 Largest Product in Series
+# Find the thirteen adjacent digits in the 1000-digit number
+# that have the greatest product.
 
 from urllib.request import urlretrieve
 urlretrieve("https://raw.githubusercontent.com/nomadlife/project-euler/master/q008_data.txt", "q008_data.txt")

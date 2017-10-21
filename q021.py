@@ -1,4 +1,6 @@
-# Q021
+# Q021 Amicable numbers
+# If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair
+# Evaluate the sum of all the amicable numbers under 10000.
 
 def getSumOfDivisors(number):
     total=0
