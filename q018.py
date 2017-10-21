@@ -23,6 +23,7 @@ def biggest_sum_with_path(i=0,j=0):
 		else :
 			return int(numbers[i][j])+int(num2),numbers[i][j]+","+str2
 
+#need to fix
 def biggest_path(i=0,j=0):
 	if i==m-1:
 		return numbers[i][j]
