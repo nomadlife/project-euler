@@ -2,23 +2,17 @@
 # Find the millionth lexicographic permutation
 # of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
-def factorial(number):
-    total=1
-    for i in range(number,1,-1):
-        total=total*i
-    return total
+def get_next_permutation(string):
+    i=len(string)-2
+    while i >= 0:
+        if string[i] < string[i+1]:
+            target = sorted(string[i:])
+            new_num = target.pop(target.index(string[i])+1)
+            last_nums = ''.join(target)
+            return string[:i] + new_num + last_nums
+        i-=1
 
-number='0123456789'
-target=1000000
-value=0
-for i in range(10):
-    value=factorial(9-i)
-    count=0
-    while value<=target:
-        target=target-value
-        count+=1
-    number = number[:i]+number[i+count]+number[i:i+count]+number[i+count+1:]
-print(number)
-print(target)
-
-#final value is millio+1th value.
+string='0123456789'
+for i in range(1,1000000):
+    string = get_next_permutation(string)
+print(string)
