@@ -1,25 +1,13 @@
-# 1000000까지 카운트
+# Q035 Circular primes, ~1M, z8350, 25s
 
-def is_prime(number):
-    i=2
-    while i <= number**0.5:
-        if number % i == 0:
-            return False
-        i+=1
-    return True
+from sympy import isprime
 
 count=0
 for i in range(2,1000000):
-    if is_prime(i):
-        #print(i,"is prime",end=",")
+    if isprime(i):
         string = str(i)
-        is_circular_prime = True
         m=len(string)
-        for j in range(1,m):
-            string_new = string[j:]+string[:j]
-            if not is_prime(int(string_new)):
-                is_circular_prime = False
-        if is_circular_prime:
-            #print(i,"is circular prime")
+        if all(isprime(x) for x in [int(string[j:]+string[:j]) for j in range(1,m)]):
             count+=1
 print(count)
+

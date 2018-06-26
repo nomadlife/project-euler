@@ -8,12 +8,12 @@ def grid(r,c):
         return c+1
     elif c==1:
         return r+1
+    elif (r,c) in cache:
+        return cache[r,c]
     else:
-        return grid(r,c-1)+grid(r-1,c)
+        cache[r,c]=grid(r,c-1)+grid(r-1,c)
+        return cache[r,c]
 
-i=0;dim=20;total=0
-while i<=dim:
-    total = total + grid(i,dim-i)**2
-    i+=1
-
-print(total)
+cache={}
+grid(20,20)
+print(cache[20,20])

@@ -9,8 +9,6 @@ with open(filename) as file_object:
 pi_sum=0
 for line in lines:
     pi_sum+= int(line.rstrip())
-    print(pi_sum)
-
 
 print(pi_sum)
 print(str(pi_sum)[0:10])

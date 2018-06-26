@@ -1,3 +1,4 @@
+# Q034 Digit factorials, all, 
 import time
 start = time.time()
 

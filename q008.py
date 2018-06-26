@@ -2,9 +2,6 @@
 # Find the thirteen adjacent digits in the 1000-digit number
 # that have the greatest product.
 
-from urllib.request import urlretrieve
-urlretrieve("https://raw.githubusercontent.com/nomadlife/project-euler/master/q008_data.txt", "q008_data.txt")
-
 with open("q008_data.txt") as file_object:
     lines = file_object.readlines()
 

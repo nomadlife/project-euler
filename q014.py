@@ -5,23 +5,22 @@ import time
 start_time = time.time()
 
 def collatz(num):
-    count=1
-    while True:
-        if num%2==0:
-            num=num/2
-        elif num==1:
-            return count
-        else:
-            num=num*3+1
-        count+=1
+    if num == 1: 
+        return 1
+    elif (num) in cache :
+        return cache[num]
+    elif num%2==0:
+        return collatz(num/2) +1
+    else:
+        return collatz(num*3+1) +1
 
-i=1;max_chain=0;max_i=0
-while i<1000000:
-    chain=collatz(i)
-    if chain>max_chain:
-        max_chain=chain
-        max_i=i
-        print("loop :",i,"chain :",chain,"max_chain :",max_chain)
+cache={}
+i=1;maxValue=0
+while i < 1000000:
+    value = collatz(i)
+    if value > maxValue : 
+        maxValue = value
+    cache[i] = value
     i+=1
 
 print("max_chain :", max_chain,"loop ",max_i)

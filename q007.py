@@ -1,5 +1,7 @@
 # Q007 10001st prime number
 
+from sympy import isprime
+
 def is_prime(num):
     if num==1:
         return False

@@ -6,17 +6,7 @@
 
 import time
 start_time = time.time()
-
-def is_prime(num):
-    if num<=1:
-        return False
-    loop=num**0.5
-    i=2
-    while i<=loop:
-        if num%i==0:
-            return False
-        i+=1
-    return True
+from sympy import isprime
 
 max_n=0
 for a in range(-1000,1001):
@@ -24,7 +14,7 @@ for a in range(-1000,1001):
         n=0
         while True:
             value = n**2 + a*n + b
-            if value>0 and is_prime(value):
+            if value>0 and isprime(value):
                 n+=1
             else:
                 if n>max_n:
