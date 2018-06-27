@@ -1,6 +1,4 @@
-#Q024 Lexicographic permutations
-# Find the millionth lexicographic permutation
-# of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+#Q024 Lexicographic permutations, find 1Mth permutation.
 
 def get_next_permutation(string):
     i=len(string)-2

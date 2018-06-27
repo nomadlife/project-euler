@@ -1,0 +1,1 @@
+# p055 Lychrel numbers
