@@ -3,11 +3,8 @@
 # 938th name in the list, COLIN would obtain a score of 938 × 53 = 49714.
 # What is the total of all the name scores in the file?
 
-filename = 'q022_data.txt'
-with open(filename) as file_object:
-    contents = file_object.read()
-contents=contents.replace('"','')
-names=contents.split(',')
+with open('q022_data.txt') as data:
+    names = data.read().replace('"','').split(',')
 names.sort()
 
 grand_total =0
