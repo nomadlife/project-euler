@@ -1,4 +1,4 @@
-#p079
+#p079 Passcode derivation
 with open('p079_keylog.txt') as file:
     codes = [line.rstrip() for line in file.readlines()]
 
