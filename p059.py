@@ -1,15 +1,14 @@
 # p059 XOR decryption
-keyLength=3
-for keyNum in range(keyLength):
-    string='abcdefghijklmnopqrstuvwxyz'
-    test=contents
+with open('p059_cipher.txt') as file_object:
+    contents = file_object.read().rstrip().split(',')
+    
+for keyNum in range(3):
     maxValue =[]
-    for k in string:
+    for k in range(97,123):
         count=0
-        for i,j in enumerate(test):
+        for i,j in enumerate(contents):
             if i%3==keyNum:
-                val= int(j)^ord(k)
-                if chr(val) in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ':
+                if int(j)^k in range(65,123):
                     count+=1
-        maxValue.append([count,k])
+        maxValue.append([count,chr(k)])
     print(max(maxValue))
