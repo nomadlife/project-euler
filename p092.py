@@ -1,4 +1,4 @@
-# p092 , 135s, atom, z8350
+# p092 , 135s, z8350
 cache={}
 for i in range(1,10000000):
     number=i
