@@ -1,5 +1,5 @@
 # Q043 Sub-string divisibility
-# resursion - list reverse, return summ
+# recursion - list reverse, return summ
 def ispan(string):
     if all(string.count(x)==1 for x in string):
         return True
