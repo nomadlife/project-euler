@@ -1,58 +1,40 @@
 # p054 Poker hands
 with open('p054_poker.txt') as data:
-    games = [i.split() for i in data.readlines()]
+    games = [''.join(i.split()) for i in data.readlines()]
 
-def whowin(results):
-    keywords='High,One,Two,Three,Straight,Flush,Full House,Four,Straight Flush,Royal Flush'
-    orders = keywords.split(',')[::-1]
-    for key in orders:
-        if results[0][key] > results[1][key] :
-            return 'player 1 win'
-        elif results[0][key] < results[1][key] :
-            return 'player 2 win'
-    return 'no decision'
+def winner(r1,r2):
+    for i in range(8,-1,-1):
+        if r1[i]>r2[i]:
+            return 'p1'
+        elif r1[i]<r2[i]:
+            return 'p2'
+    return 'tie'
 
-def evaluate(pair,suit):
-    keyword='High,One,Two,Three,Straight,Flush,Full House,Four,Straight Flush,Royal Flush'
-    ranks=dict(zip(keyword.split(','),[0]*10))
-    if 1 in pair:
-        ranks['High'] = 12-pair[::-1].index(1)
-    if pair.count(2)==1:
-        ranks['One'] = pair.index(2)
-    if pair.count(2)==2:
-        ranks['Two'] = pair.index(2,pair.index(2)+1)
-    if 3 in pair:
-        ranks['Three'] = pair.index(3)
-    if 4 in pair:
-        ranks['Four'] = pair.index(4)
-    if 5 in suit:
-        ranks['Flush'] = ranks['High']
-    if '11111' in ''.join([str(x) for x in pair]):
-        ranks['Straight'] = ranks['High']
-    if ranks['One'] != 0 and ranks['Three'] != 0 :
-        ranks['Full House'] = ranks['Three']
-    if ranks['Straight'] != 0 and ranks['Flush'] != 0:
-        ranks['Straight Flush'] = ranks['Straight']
-    return ranks
-    
-def count(cards):
-    pair=[0]*13
-    suit=[0]*4
-    for card in cards:
-        for i,v in enumerate('23456789TJQKA'):
-            if card[0] == v:
-                pair[i]+=1
-        for i,v in enumerate('CSHD'):
-            if card[1] == v:
-                suit[i]+=1
-    return evaluate(pair,suit)
+def grader(count):
+    pair = count[:13]
+    suit = count[13:17]
+    rank=[0]*9
+    if '1' in pair:        rank[0] = pair.rindex('1')
+    if pair.count('2')==1: rank[1] = pair.index('2')
+    if pair.count('2')==2: rank[2] = pair.rindex('2')
+    if '3' in pair:        rank[3] = pair.index('3')
+    if '11111' in pair:    rank[4] = rank[0]
+    if '5' in suit:        rank[5] = rank[0]   
+    if rank[1] != 0 and rank[3] != 0 : rank[6] = rank[3]    
+    if '4' in pair:                    rank[7] = pair.index('4')
+    if rank[4] != 0 and rank[5] != 0 : rank[8] = rank[4]    
+    return rank
 
-count_win=0
-for game in games:
-    results=[]
-    results.append(count(game[0:5]))
-    results.append(count(game[5:10]))
-    decision = whowin(results)
-    if decision == 'player 1 win':
-        count_win+=1
-print(count_win)
+def counter(g):
+    c=''
+    for i in '23456789TJQKACSHD':
+        c+=str(g.count(i))
+    return c
+
+p1count=0
+for g in games:
+    g1=grader(counter(g[:10]))
+    g2=grader(counter(g[10:20]))
+    if winner(g1,g2)=='p1':
+        p1count+=1
+print(p1count)
