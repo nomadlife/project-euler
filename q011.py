@@ -1,26 +1,21 @@
 # Q011 Largest Product in grid 20x20
 # greatest product of four adjacent numbers in the same direction
-# (up, down, left, right, or diagonally)
 
-filename = 'q011_data.txt'
-with open(filename) as file_object:
-	lines = file_object.readlines()
+with open('q011_data.txt') as f:
+	numbers = [[int(j) for j in i.split()] for i in f.readlines()]
 
-numbers=[]
-for line in lines:
-	print(line.split())
-	numbers.append(line.split())
+def prod(arr):
+    total =1
+    for i in arr:
+        total *= i
+    return total
 
-from functools import reduce
-
-maxValue=0
-for i in range(17):
-    for j in range(17):
-        prod=[]
-        prod.append(reduce(lambda x, y: int(x)*int(y), numbers[i][j:j+4]))
-        prod.append(reduce(lambda x, y: int(x)*int(y), [numbers[i+k][j] for k in range(0,4)]))
-        prod.append(reduce(lambda x, y: int(x)*int(y), [numbers[i+k][j+k] for k in range(0,4)]))
-        prod.append(reduce(lambda x, y: int(x)*int(y), [numbers[i+k][j+3-k] for k in range(0,4)]))
-        if max(prod) > maxValue:
-            maxValue = max(prod)
-print(maxValue)
+result=[]
+for i in range(20):
+    for j in range(20):
+        result.append(max(\
+            prod(numbers[i][j:j+4]),
+            prod([numbers[i+k][j] for k in range(min(20-i,4))]),
+            prod([numbers[i+k][j+k] for k in range(min(20-i,20-j,4))]),
+            prod([numbers[i+k][j+3-k] for k in range(min(20-i,20-j-3,4))])))
+max(result)
