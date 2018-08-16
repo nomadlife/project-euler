@@ -1,1 +1,1 @@
-# Q031 Number spiral diagonals
+# Q031 Coin sums

@@ -1,4 +1,4 @@
-# Q030 Number spiral diagonals
+# Q030 Digit fifth powers
 
 total=0
 for i in range(2,1000000):

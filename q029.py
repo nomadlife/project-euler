@@ -1,4 +1,4 @@
-# Q029 Number spiral diagonals
+# Q029 Distinct powers
 
 mylist=[]
 for a in range(2,101):
