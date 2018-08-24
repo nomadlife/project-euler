@@ -11,8 +11,8 @@ def winner(r1,r2):
     return 'tie'
 
 def grader(count):
-    pair = count[:13]
-    suit = count[13:17]
+    pair = count[:14]
+    suit = count[14:18]
     rank=[0]*9
     if '1' in pair:        rank[0] = pair.rindex('1')
     if pair.count('2')==1: rank[1] = pair.index('2')
@@ -26,7 +26,7 @@ def grader(count):
     return rank
 
 def counter(g):
-    c=''
+    c='0'
     for i in '23456789TJQKACSHD':
         c+=str(g.count(i))
     return c
