@@ -1,8 +1,5 @@
 # q014 Longest Collatz sequence
-# Which starting number, under one million, produces the longest chain?
-
-import time
-start_time = time.time()
+# 15s, atom z8350
 
 def collatz(num):
     if num == 1: 
@@ -23,5 +20,4 @@ while i < 1000000:
     cache[i] = value
     i+=1
 
-print("max_chain :", max_chain,"loop ",max_i)
-print("calculation time:",time.time()-start_time)
+print(maxValue)
