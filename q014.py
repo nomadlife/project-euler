@@ -1,23 +1,18 @@
 # q014 Longest Collatz sequence
-# 15s, atom z8350
+# 11s, atom z8350
 
-def collatz(num):
-    if num == 1: 
+def collatz(n):
+    if n == 1: 
         return 1
-    elif (num) in cache :
-        return cache[num]
-    elif num%2==0:
-        return collatz(num/2) +1
-    else:
-        return collatz(num*3+1) +1
+    if (n) not in cache :
+        if n%2==0:
+            cache[n] = collatz(n/2) +1
+        else : 
+            cache[n] = collatz(n*3+1) +1
+    return cache[n]
 
 cache={}
-i=1;maxValue=0
-while i < 1000000:
-    value = collatz(i)
-    if value > maxValue : 
-        maxValue = value
-    cache[i] = value
-    i+=1
+for i in range(1,1000000):
+    collatz(i)
 
-print(maxValue)
+max(cache, key=cache.get)
