@@ -2,21 +2,17 @@
 # How many Sundays fell on the first of the month
 # during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
-sundayCount = 0
-totalDay = 0
-months = [('Jan',31),('Feb',28),('Mar',31),('Apr',30),('May',31),('Jun',30),('Jul',31),('Aug',31),('Sep',30),('Oct',31),('Nov',30),('Dec',31)]
-for year in range(1900,2001):
-    for month in months:
-        if month[0]=='Feb' and year%4==0 and year%100!=0:
-            print(year,month[0],month[1]+1,"leap year")
-            totalDay=totalDay+month[1]+1
-        else :
-            print(year,month[0],month[1])
-            totalDay=totalDay+month[1]
-        print(totalDay,(totalDay-6)%7)
-        if (totalDay-6)%7 == 0 and year>1900:
-            sundayCount+=1
+daylist = [31,28,31,30,31,30,31,31,30,31,30,31]
+total=0
+count=0
+for y in range(1900,2001):
+    for m in range(12):
+        monthday=daylist[m]
+        if y%4==0 and m==1: 
+            monthday+=1
+        for d in range(monthday):
+            if y>1900 and d==0 and total%7==6:
+                count+=1
+            total+=1
 
-print(sundayCount)
-print(sundayCount-1)
-#마지막 2000년 12월이 7로 나누어 떨어지는데, 2001년 1월1일이 카운트에 들어가서 1을 빼줌.
+print(count)
