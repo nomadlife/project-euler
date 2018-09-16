@@ -3,12 +3,13 @@
 # Evaluate the sum of all the amicable numbers under 10000.
 
 def divisors(n):
-    i=2;total=1
-    while i<n**0.5:
+    i=2;total={1}
+    while i<=n**0.5:
         if n%i==0:
-            total+=i+n/i
+            total.add(i)
+            total.add(n/i)
         i+=1
-    return total
+    return sum(total)
 
 total=0
 for i in range(1,10000):
