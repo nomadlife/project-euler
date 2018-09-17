@@ -1,19 +1,13 @@
 # Q020 Factorial digit sum
-# Find the sum of the digits in the number 100!
 
-def get_factorial(number):
-    product=1
-    while True:
-        if number <=1 :
-            return product
-        product=product*number
-        number=number-1
-
-result=get_factorial(100)
-print(result)
-string=str(result)
+def fact(num):
+    total=1
+    for i in range(1,num+1):
+        total*=i
+    return total
 
 total=0
+string=str(fact(100))
 for i in string:
-    total=total+int(i)
-print(total)
+    total+=+int(i)
+total
