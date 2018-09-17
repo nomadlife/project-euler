@@ -2,7 +2,8 @@
 
 def divisors(n):
     i=2;total={1}
-    while i<=n**0.5:
+    loop=n**0.5
+    while i<=loop:
         if n%i==0:
             total.add(i)
             total.add(n/i)
