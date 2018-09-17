@@ -11,6 +11,6 @@ grand_total =0
 for idx,val in enumerate(names):
     total=0
     for i in val:
-        total=total+ord(i)-64
+        total+=ord(i)-64
     grand_total+=total*(idx+1)
 print(grand_total)
