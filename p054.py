@@ -23,10 +23,10 @@ def counter(g):
         c+=str(g.count(i))
     return c
 
-p1count=0
+p1win=0
 for g in games:
     r1 = grader(counter(g[:10]))
     r2 = grader(counter(g[10:20]))
     if r1 > r2:
-        p1count+=1
-print(p1count)
+        p1win+=1
+print(p1win)
