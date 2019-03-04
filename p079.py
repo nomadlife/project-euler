@@ -14,4 +14,4 @@ for code in codes:
     sort(code[0],code[1])
     sort(code[1],code[2])
 	
-sorted(pw, key=pw.get)
+print(sorted(pw, key=pw.get))
