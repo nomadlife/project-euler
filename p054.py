@@ -2,9 +2,9 @@
 with open('p054_poker.txt') as data:
     games = [''.join(i.split()) for i in data.readlines()]
 
-def grader(count):
-    pair = count[:14]
-    suit = count[14:18]
+def grader(cards):
+    no_of_cards = '00'+''.join([str(cards.count(i)) for i in '23456789TJQKACSHD'])
+    number_part = count
     rank=[0]*9
     if '1' in pair:        rank[8] = pair.rindex('1')
     if pair.count('2')==1: rank[7] = pair.index('2')
@@ -17,16 +17,8 @@ def grader(count):
     if rank[4] != 0 and rank[3] != 0 : rank[0] = rank[4]    
     return rank
 
-def counter(g):
-    c='0' 
-    for i in '23456789TJQKACSHD':
-        c+=str(g.count(i))
-    return c
-
-p1win=0
-for g in games:
-    r1 = grader(counter(g[:10]))
-    r2 = grader(counter(g[10:20]))
-    if r1 > r2:
+p1win = 0
+for hand in games:
+    if grader(counter(hand[:10])) > grader(counter(hand[10:20])):
         p1win+=1
 print(p1win)
